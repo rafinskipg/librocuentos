@@ -73,13 +73,15 @@ function playChapter (i) {
 		var a = i;
 		window.setTimeout(function(){
 			//Animate the images
-			playImages(chapter.images, a);
+			if(typeof(chapter.images) != 'undefined' && chapter.images.length > 0){
+				playImages(chapter.images, a);
+			}
 			setText(chapter.text);
 		},1000);        
    		
    		//Call this function again after the duration of the chapter
    		window.setTimeout(function () {    
-   			closeChapter(i);
+   			closeChapters(i);
       		i++;       //  your code here                
       		if (i<chapters.length)  playChapter(i);      //  decrement i and call myLoop again if i > 0
   		 }, chapters[i].duration)
@@ -137,11 +139,22 @@ var setText = function(text){
 	
 }
 
-var closeChapter = function(index){
-	for(var i = 0; i < chapters[index].images.length; i++){
-		var img = document.getElementById('img'+index+i);
-		img.remove();
+var closeChapters = function(actualchapter){
+	for(var index = 0; index< actualchapter; index++){
+		if(typeof( chapters[index].images ) != 'undefined' &&  chapters[index].images.length > 0){
+			for(var i = 0; i < chapters[index].images.length; i++){
+				var image = chapters[index].images[i];
+				if(typeof(image.preserve) == 'undefined' || image.preserve == 0){
+					var img = document.getElementById('img'+index+i);
+					img.remove();
+				}else if(typeof(image.preserve) != 'undefined'){
+					--image.preserve;
+				}
+								
+		}
 	}
+	}
+	
 	textContainer.className = "";
 	container.className = "";
 }

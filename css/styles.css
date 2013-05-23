@@ -29,7 +29,8 @@ body{
 	height: auto;
 	width: auto;
 	display: none;
-	
+	max-width: 500px;
+	z-index: 1000;
 	-webkit-transition: all 2s ease;
 	-moz-transition: all 2s ease;
 	-o-transition: all 2s ease;

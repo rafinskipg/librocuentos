@@ -10,20 +10,22 @@ var chapter_1 = {
 				'height': '100px',
 				'from' : 'left',
 				'at' : 0,
-				'to': 100,
+				'to': 40,
 				'speed': '10000',
-				'mode': 'ease'
+				'mode': 'ease',
+				'preserve': 7,
 				
 			},	{
 				'name': 'cloud1',
 				'uri': 'img/cloud.png',
 				'width': '100px',
 				'height': '50px',
-				'from' : 'left',
+				'from' : 'right',
 				'at' : 3,
-				'to': 110,
+				'to': 50,
 				'speed': '10000',
-				'mode': 'ease'
+				'mode': 'ease',
+				'preserve': 7,
 				
 			},	{
 				'name': 'cloud2',
@@ -32,65 +34,101 @@ var chapter_1 = {
 				'width': '200px',
 				'height': '150px',
 				'at' : -10,
-				'to': 50,
+				'to': 60,
 				'speed': '10000',
-				'mode': 'ease'
+				'mode': 'ease',
+				'preserve': 7,
 				
 			},	{
 				'name': 'person',
-				'width': '200px',
+				'width': '150px',
 				'height': '150px',
-				'uri': 'img/person.png',
+				'uri': 'img/estrellas/lobito.gif',
 				'from' : 'left',
 				'at' : 20,
 				'to': 50,
 				'bottom': 0,
 				'speed': '10000',
 				'mode': 'ease',
-				'transform' : [{
-					'key': 'height',
-					'value' : 0.8
-					},{
-					'key': 'bottom',
-					'value': 100
-				}]
+				'preserve': 7,
+				
 				
 			}
 		],
 		'text': 
-			'In a dark troubled night I decided to move forward',
+			'Había una vez un lobito muy curioso que vivía en el bosque.',
 			
 		'duration': 10000,
-		'background': 'img/chapter1bg.jpg'
+		'background': 'img/estrellas/noche.jpg'
 		
 	};
 var chapter_2 = {
+		
+		'text': 
+			'El lobito siempre se preguntaba que eran las luces que brillaban en lo alto del cielo.<br/> "¿Serán luciérnagas que brillan en la oscuridad? \n¿Por qué nunca se apagan?"',
+			
+		'duration': 15000,
+		'background': 'img/estrellas/noche.jpg'
+		
+	};
+	
+var chapter_3 = {
 		'images':[
 				{
-				'name': 'person2',
-				'width': '200px',
-				'height': '150px',
-				'uri': 'img/person.png',
+				'name': 'loba',
+				'width': '150px',
+				'height': '250px',
+				'uri': 'img/estrellas/lobamama.png',
 				'from' : 'left',
-				'at' : -10,
-				'to': 20,
+				'at' : -20,
+				'to': 30,
 				'bottom': 0,
-				'speed': '3000',
-				'mode': 'ease'
+				'speed': '5000',
+				'mode': 'ease',
+				'preserve': 4,
 				
 				
 			}
 		],
 		'text': 
-			'I allways thought that there was a path I should follow... I must decide',
+			'"No son luciernagas, hijo" - le contó su madre.',
 			
-		'duration': 15000,
-		'background': 'img/chapter2bg.jpg'
+		'duration': 6000,
+		'background': 'img/estrellas/noche.jpg'
 		
+	};
+var chapter_4 = {
+		'text': 
+			'"¿Entonces que son?" - dijo el lobito',
+		'duration': 6000,
+		'background': 'img/estrellas/noche.jpg'
+	};
+var chapter_5 = {
+		'text': 
+			'"Son estrellas, como nuestro sol"',
+		'duration': 6000,
+		'background': 'img/estrellas/noche.jpg'
+	};
+var chapter_6 = {
+		'text': 
+			'"¡No puede ser! Dijo el lobito. <br/> "El sol es muuuucho más grande que las estrellas"',
+		'duration': 8000,
+		'background': 'img/estrellas/noche.jpg'
+	};
+var chapter_7 = {
+		'text': 
+			'"No todo es lo que parece a simple vista, hijo mío.<br/> Las estrellas son soles que están tan lejos, tan lejos, que parecen hormigas "',
+		'duration': 8000,
+		'background': 'img/estrellas/noche.jpg'
 	};
 
 chapters.push(chapter_1);
 chapters.push(chapter_2);
+chapters.push(chapter_3);
+chapters.push(chapter_4);
+chapters.push(chapter_5);
+chapters.push(chapter_6);
+chapters.push(chapter_7);
 
 processChapters(chapters);
 loader.load(resources);

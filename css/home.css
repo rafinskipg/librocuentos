@@ -1,0 +1,75 @@
+body{
+	background-color: rgba(235, 255, 2, 0.54);
+	background-image : url('../img/bg.png');
+	background-size: 100%;
+	font-family: 'Kaushan Script', cursive;
+	padding-left: 100px;
+	padding-top: 50px;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+#logo{
+	font-size: 50px;
+	height: 300px;
+	color: rgb(42, 179, 64);
+	text-align: center;
+	padding-top: 110px;
+	/*background-color: rgba(255, 255, 255, 0.89);*/
+	text-shadow: 2px 4px rgba(1,1,1,1);
+	border-radius: 137px;
+	float: left;
+	background-image: url('../img/cohete.gif');
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 50px;
+	width: 400px;
+	background-position-y: 150px;
+}
+#container-libros{
+	width: 600px;
+}
+.libro {
+	background-color: rgb(40, 219, 191);
+	background-size:200px 200px;
+	background-repeat:no-repeat;
+	width: 200px;
+	height: 200px;
+	margin: 0;
+	float: left;
+	position:relative;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	transition: all 2s ease;
+	border: 8px solid rgba(255,255,255,1);
+}
+.libro:hover{
+	background-position: -200px;
+	border: 8px solid yellow;
+}
+
+.libro .texto{
+	width: 400px; 
+	padding-left: 210px;
+	padding-top: 30px;
+	height: 200px;
+	position:absolute;
+	top: 0;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	transition: all 2s ease;
+}
+
+.libro .texto:hover{
+	left: -200px;
+}
