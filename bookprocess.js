@@ -110,7 +110,7 @@ var playImages = function(images,chapter){
 	for(var i = 0; i < images.length; i++){
 		var image = images[i];
 		 var img = document.getElementById( 'img'+chapter+i );
-		 console.log('img'+chapter+image.name);
+		 
 		 img.className = "start end";
 	   
 	   if(typeof(image.transform )!= 'undefined'){
@@ -144,16 +144,27 @@ var closeChapters = function(actualchapter){
 		if(typeof( chapters[index].images ) != 'undefined' &&  chapters[index].images.length > 0){
 			for(var i = 0; i < chapters[index].images.length; i++){
 				var image = chapters[index].images[i];
-				if(typeof(image.preserve) == 'undefined' || image.preserve == 0){
+				if(typeof(image.preserve ) == 'undefined'){
+					image.preserve = 0;
+				}
+				if(image.preserve > 0){
+					image.preserve = image.preserve -1 ;
+				}
+				
+				if(image.preserve == 0){
+					console.log('img'+index+i);
+					console.log(image);
 					var img = document.getElementById('img'+index+i);
 					img.remove();
-				}else if(typeof(image.preserve) != 'undefined'){
-					--image.preserve;
+					image.preserve = image.preserve -1 ;
 				}
-								
+			}
 		}
+	
 	}
-	}
+	
+		
+	
 	
 	textContainer.className = "";
 	container.className = "";

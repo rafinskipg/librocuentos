@@ -1,6 +1,6 @@
 body{
-	background-color: rgba(235, 255, 2, 0.54);
-	background-image : url('../img/bg.png');
+	background-color: rgba(189, 247, 162, 0.91);
+	/*background-image : url('../img/bg.png');*/
 	background-size: 100%;
 	font-family: 'Kaushan Script', cursive;
 	padding-left: 100px;
@@ -9,6 +9,21 @@ body{
 a{
 	color: white;
 	text-decoration: none;
+}
+#paypal {
+background: rgba(64, 199, 45, 0.57);
+height: 29px;
+padding: 10px;
+width: 390px;
+border: 5px solid white;
+color:white;
+letter-spacing: 0.1em;
+border-radius: 24px
+-moz-border-radius: 24px;
+-webkit-border-radius: 24px;
+}
+#paypal form{
+	width : 100px; float: left;
 }
 #logo{
 	font-size: 50px;
@@ -72,4 +87,9 @@ a{
 
 .libro .texto:hover{
 	left: -200px;
+}
+
+.proximamente .texto{
+	background-image: url('../img/proximamente.gif');
+	background-repeat: no-repeat;
 }
