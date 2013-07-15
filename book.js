@@ -171,6 +171,8 @@ chapters.push(chapter_9);
 chapters.push(chapter_10);
 chapters.push(chapter_11);
 
+var spinner = new Spinner();
+spinner.start();
 processChapters(chapters);
 loader.load(resources);
-loader.onReady(function(){playChapters(chapters);});
+loader.onReady(function(){spinner.stop();playChapters(chapters);});

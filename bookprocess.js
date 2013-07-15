@@ -5,19 +5,27 @@ var processChapters = function(chapters){
 	for (var i = 0; i<chapters.length; i++){
 		var chapter = chapters[i];
 		
+		var index = resources.length ;
+		resources.push([]);
+	
 		if(typeof(chapter.images) != 'undefined'){
-			processImages(chapter.images, i);
+			processImages(index, chapter.images, i);
 		}
-		var sheet = document.createElement('style')
-		sheet.innerHTML = "#container.chapter"+i+"{ background-image:url('"+chapter.background+"')}";
-		document.body.appendChild(sheet);
+		processBackground(index,chapter.background, i);
 	}
-
 }
 
-var processImages = function(images, chapter){
-    var index = resources.length ;
-	resources.push([]);
+var processBackground = function (index,background, chapter){
+	
+	//Background
+	var sheet = document.createElement('style')
+	sheet.innerHTML = "#container.chapter"+chapter+"{ background-image:url('"+background+"')}";
+	document.body.appendChild(sheet);
+	resources[index].push({'name': 'chapter'+chapter+'background','url' : background}); 
+	
+}
+var processImages = function(index,images, chapter){
+    
 	
 	for (var i = 0; i<images.length; i++){	
 		var image = images[i];
@@ -49,7 +57,7 @@ var processImages = function(images, chapter){
 		sheet.innerHTML = "#img"+chapter+i +"{"+stylesAll+"} #img"+chapter+i+".start{"+stylesStart+"} #img"+chapter+i +".end{"+stylesEnd+"}";
 		document.body.appendChild(sheet);
 	}
-
+	
 }
 
 
